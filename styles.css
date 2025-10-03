@@ -705,6 +705,7 @@ button[type="submit"]:hover {
 
 .map-container {
   margin-top: 1rem;
+  margin-left: -65px;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: var(--shadow);
