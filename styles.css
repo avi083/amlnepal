@@ -231,6 +231,7 @@ nav {
   background: linear-gradient(135deg, #f5f7fa 57%, #1976d2 57%);
   position: relative;
   overflow: hidden;
+  
 }
 
 .hero::before {
@@ -492,7 +493,7 @@ section {
 }
 
 /* Consultants Section */
-#consultants {
+#ourteam {
   background: white;
 }
 
@@ -566,6 +567,290 @@ section {
 
 .consultant-card p {
   color: var(--text);
+}
+
+/* Consultant Header Styles */
+.consultant-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.consultant-info {
+  flex: 1;
+}
+
+.consultant-image {
+  flex-shrink: 0;
+  width: 100px;
+  height: 100px;
+}
+
+.consultant-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--blue);
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.consultant-card:hover .consultant-image img {
+  border-color: var(--red);
+  transform: scale(1.05);
+}
+
+/* Resources Section */
+#resources {
+  background: var(--light-gray);
+}
+
+.resources-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.resource-card {
+  background: white;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  border-left: 4px solid var(--blue);
+  position: relative;
+  overflow: hidden;
+}
+
+.resource-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(25, 118, 210, 0.05), transparent);
+  transition: var(--transition);
+}
+
+.resource-card:hover::before {
+  left: 100%;
+}
+
+.resource-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.resource-icon {
+  background: var(--light-gray);
+  color: var(--blue);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.resource-card:hover .resource-icon {
+  background: var(--blue);
+  color: white;
+  transform: scale(1.1);
+}
+
+.resource-content {
+  flex: 1;
+}
+
+.resource-content h3 {
+  font-size: 1.4rem;
+  color: var(--dark-gray);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.resource-content h3 i {
+  color: var(--blue);
+}
+
+.resource-content > p {
+  color: var(--text);
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Download Links Grid */
+.resource-links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 0.8rem;
+  margin-top: 1rem;
+}
+
+.resource-link {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.8rem 1.2rem;
+  background: var(--light-gray);
+  color: var(--dark-gray);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: var(--transition);
+  border: 1px solid var(--medium-gray);
+  position: relative;
+  overflow: hidden;
+}
+
+.resource-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(25, 118, 210, 0.1), transparent);
+  transition: var(--transition);
+}
+
+.resource-link:hover::before {
+  left: 100%;
+}
+
+.resource-link:hover {
+  background: var(--blue);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(25, 118, 210, 0.3);
+  border-color: var(--blue);
+}
+
+.resource-link i {
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+.resource-link:hover i {
+  transform: scale(1.1);
+}
+
+/* File name truncation for long names */
+.resource-link span {
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Remove placeholder card styles */
+.resource-card.placeholder {
+  display: none;
+}
+
+/* Animation for resource links */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.resource-link {
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+.resource-link:nth-child(1) { animation-delay: 0.1s; }
+.resource-link:nth-child(2) { animation-delay: 0.2s; }
+.resource-link:nth-child(3) { animation-delay: 0.3s; }
+.resource-link:nth-child(4) { animation-delay: 0.4s; }
+.resource-link:nth-child(5) { animation-delay: 0.5s; }
+.resource-link:nth-child(6) { animation-delay: 0.6s; }
+.resource-link:nth-child(7) { animation-delay: 0.7s; }
+.resource-link:nth-child(8) { animation-delay: 0.8s; }
+.resource-link:nth-child(9) { animation-delay: 0.9s; }
+.resource-link:nth-child(10) { animation-delay: 1s; }
+
+/* Responsive Styles for Consultant Cards */
+@media (max-width: 768px) {
+  .consultant-header {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+  
+  .consultant-image {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .resources-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .resource-card {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 2rem;
+  }
+  
+  .resource-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+  
+  .resource-content h3 {
+    justify-content: center;
+  }
+  
+  .resource-links-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .consultant-image {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .resource-card {
+    padding: 1.5rem;
+  }
+  
+  .resource-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 1.3rem;
+  }
+  
+  .resource-link {
+    padding: 0.7rem 1rem;
+    font-size: 0.85rem;
+  }
 }
 
 /* Contact Section */
